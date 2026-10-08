@@ -1,6 +1,6 @@
 Steg 3:
-![Summary-sida för körning](m6-step3-1)
-![Körningar för Publish images](m6-step3-2)
+![Summary-sida för körning](m6-step3-1.png)
+![Körningar för Publish images](m6-step3-2.png)
 Verifierade automatisk trigger för publish-images.yml startat av merge-commit. Verifierade också båda jobben och summary/översikt för körningen (tags).
 
 Steg 4:
