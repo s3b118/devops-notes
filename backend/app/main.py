@@ -45,17 +45,16 @@ def health() -> dict[str, str]:
 def list_items() -> list[Item]:
     return _items
 
+@app.get("/api/items/stats")
+def item_stats() -> Stats:
+    return Stats(count=len(_items), total_characters=_total_characters)
+
 @app.get("/api/items/{item_id}")
 def get_item(item_id: int) -> Item:
     for item in _items:
         if item.id == item_id:
             return item
     raise HTTPException(status_code=404, detail="Item not found")
-
-@app.get("/api/items/stats")
-def item_stats() -> Stats:
-    return Stats(count=len(_items), total_characters=_total_characters)
-
 
 @app.post("/api/items", status_code=201)
 def create_item(payload: ItemCreate) -> Item:
